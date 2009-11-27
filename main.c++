@@ -34,6 +34,10 @@ To document the program:
 #include <iostream>  // cout, endl
 #include <stdexcept> // invalid_argument, out_of_range
 
+#include "Cell.h"
+#include "ConwayCell.h"
+#include "FredkinCell.h"
+
 #ifdef TEST
     #include "cppunit/TestSuite.h"      // TestSuite
     #include "cppunit/TextTestRunner.h" // TestRunner
