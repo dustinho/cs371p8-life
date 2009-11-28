@@ -8,35 +8,35 @@ CS371p: Project #8: Life
 Google Project
 --------------
 
-<URL>
+http://code.google.com/p/cs371p8-life/
 
 -------------
 UT Blog Entry
 -------------
 
-<URL>
+http://blogs.utexas.edu/dsh554/2009/11/28/project-8-life/
 
 --
 Me
 --
 
-Name:
-EID:
-E-mail address:
+Name: Dustin Ho
+EID: dsh554 
+E-mail address: 
 
 -------
 Partner
 -------
 
-Name:
-EID:
-E-mail address:
+Name: Jackie Tsay
+EID: jat2457
+E-mail address: thepyongorawr@gmail.com
 
 -----------------------
 My Rating of My Partner
 -----------------------
 
-<rating>
+Excellent
 
 -------
 Ratings
