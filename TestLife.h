@@ -29,13 +29,16 @@ struct TestLife : CppUnit::TestFixture {
     // tests
     // -----
 
-    // <your tests>
+    void test_in () {
+		ifstream in("LifeFredkinCell.in");
+	}
 
     // -----
     // suite
     // -----
 
     CPPUNIT_TEST_SUITE(TestLife);
+	CPPUNIT_TEST(test_in);
     CPPUNIT_TEST_SUITE_END();};
 
 } // cs
