@@ -1,7 +1,7 @@
 // ---------
 // FredkinCell.h
 // ---------
-
+#include <stdio.h>
 #include "AbstractCell.h"
 
 #ifndef FredkinCell_h
@@ -12,9 +12,14 @@ class FredkinCell : public AbstractCell {
     public:
         int age;
 
-        FredkinCell (int a) : AbstractCell((a > -1)),
-                              age (a) {
+        FredkinCell (char c) : AbstractCell((c)) {
             // Age will be -1 for dead FredkinCell
+            life = !(c == '-');
+            if (life){
+                age = (c == '+') ? 10 : c - '0';
+            } else {
+                age = -1;
+            }
         }
 
         FredkinCell* clone () const {
@@ -26,7 +31,7 @@ class FredkinCell : public AbstractCell {
                 assert(age > -1);
                 if (age < 10) {
                     // age if age is less than 10
-                    return age;
+                    return age + '0';
                 } else {
                     // + if age is greater than 9
                     return '+';
@@ -44,6 +49,7 @@ class FredkinCell : public AbstractCell {
             // alive
             if (life && (neighbors%2 == 0)) {
                 life = false;
+                age = -1;
             // a dead cell becomes a live cell, if 1 or 3 neighbors are alive
             } else if (!life && neighbors%2 == 1) {
                 life = true;
@@ -53,6 +59,16 @@ class FredkinCell : public AbstractCell {
             if (life) {
                 ++age;
             }
+        }
+
+        void conwayInc() {}
+
+        void incNeighbors() {
+            ++neighbors;
+        }
+
+        void setNeighbors(int n) {
+            neighbors = n;
         }
 };
 

@@ -10,7 +10,14 @@
 class ConwayCell : public AbstractCell {
 
     public:
-        ConwayCell (bool l) : AbstractCell(l) {}
+        ConwayCell (char c) : AbstractCell(c) {
+            if (c == '*') {
+                life = true;
+            } else {
+                life = false;
+                assert(c == '.');
+            }
+        }
 
         ConwayCell* clone () const {
             return new ConwayCell(*this);
@@ -30,6 +37,18 @@ class ConwayCell : public AbstractCell {
             } else if (!life && neighbors == 3) {
                 life = true;
             }
+        }
+
+        void conwayInc() {
+            neighbors++;
+        }
+
+        void incNeighbors() {
+            ++neighbors;
+        }
+
+        void setNeighbors(int n) {
+            neighbors = n;
         }
 };
 

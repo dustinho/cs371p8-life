@@ -19,6 +19,14 @@ class Cell {
         Cell (AbstractCell* p) {
             _p = p;}
 
+        Cell (char c) {
+            if (c == '.' || c == '*') {
+                _p = new ConwayCell(c);
+            } else {
+                _p = new FredkinCell(c);
+            }
+        }
+
         Cell (const Cell& that) {
             if (!that._p)
                 _p = 0;
@@ -44,7 +52,7 @@ class Cell {
                 if (p->age == 2) {
                     // then you become a ConwayCell
                     delete _p;
-                    _p = new ConwayCell(true);
+                    _p = new ConwayCell('*');
                 }
             }
         }
@@ -55,6 +63,18 @@ class Cell {
 
         bool isAlive() {
             return _p->isAlive();
+        }
+
+        void conwayInc() {
+            _p->conwayInc();
+        }
+
+        void incNeighbors() {
+            _p->incNeighbors();
+        }
+
+        void setNeighbors(int n) {
+            _p->setNeighbors(n);
         }
 
         /*

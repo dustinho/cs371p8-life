@@ -11,7 +11,7 @@ class AbstractCell {
         bool life;
         int neighbors;
 
-        AbstractCell (bool l) : life (l) {
+        AbstractCell (char c) {
             neighbors = 0;
             }
 
@@ -26,6 +26,10 @@ class AbstractCell {
         bool isAlive() {
             return life;
         }
+
+        virtual void conwayInc() = 0;
+        virtual void incNeighbors() = 0;
+        virtual void setNeighbors(int n) = 0;
 };
 
 #endif // AbstractCell_h

@@ -32,11 +32,13 @@ To document the program:
 
 #include <cassert>   // assert
 #include <iostream>  // cout, endl
+#include <fstream>  // cout, endl
 #include <stdexcept> // invalid_argument, out_of_range
 
 #include "Cell.h"
 #include "ConwayCell.h"
 #include "FredkinCell.h"
+#include "Life.h"
 
 #ifdef TEST
     #include "cppunit/TestSuite.h"      // TestSuite
@@ -72,6 +74,23 @@ int main () {
 
         try {
             cout << "*** Life<ConwayCell> 109x69 ***" << endl;
+            cout << endl;
+            Life<ConwayCell> l;
+            ifstream conway("LifeConwayCell.in");
+            conway >> l;
+            cout << l;
+            for (int i = 0; i < 283; ++i) {
+                l.move();
+            }
+            cout << l;
+            for (int i = 0; i < 40; ++i) {
+                l.move();
+            }
+            cout << l;
+            for (int i = 0; i < 2500; ++i) {
+                l.move();
+            }
+            cout << l;
             /*
             read LifeConwayCell.in
             Print grid.
@@ -94,6 +113,15 @@ int main () {
 
         try {
             cout << "*** Life<FredkinCell> 20x20 ***" << endl;
+            cout << endl;
+            Life<FredkinCell> l;
+            ifstream fredkin("LifeFredkinCell.in");
+            fredkin >> l;
+            cout << l;
+            l.move();
+            cout << l;
+            l.move();
+            cout << l;
             /*
             read LifeFredkinCell.in
             Print grid.
@@ -112,6 +140,21 @@ int main () {
 
         try {
             cout << "*** Life<Cell> 20x20 ***" << endl;
+            cout << endl;
+            Life<Cell> l;
+            ifstream cell("LifeCell.in");
+            cell >> l;
+            cout << l;
+            l.move();
+            cout << l;
+            l.move();
+            cout << l;
+            l.move();
+            cout << l;
+            l.move();
+            cout << l;
+            l.move();
+            cout << l;
             /*
             read LifeCell.in
             Print grid.
