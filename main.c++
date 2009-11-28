@@ -53,6 +53,7 @@ To document the program:
 
 int main () {
     using namespace std;
+    using namespace cs;
     ios_base::sync_with_stdio(false); // turn off synchronization with C I/O
 
     #ifdef TEST
