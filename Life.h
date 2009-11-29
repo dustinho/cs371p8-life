@@ -8,8 +8,16 @@
 
 using namespace std;
 
+// forward declaration of TestLife to add as a friend
+namespace cs {
+	struct TestLife;
+}
+
 template <typename T>
 class Life {
+
+	// add TestLife as a friend so it access the grid
+	friend struct cs::TestLife;
 
     private:
         vector<vector<T> > _grid;
@@ -170,10 +178,15 @@ class Life {
             }
 
             // Eval each cell
+			population = 0;
             for (int r = 0; r < rows; ++r) {
                 for (int c = 0; c < cols; ++c) {
                     _grid[r][c].eval();
                     _grid[r][c].setNeighbors(0);
+
+					if (_grid[r][c].isAlive()) {
+						++population;
+					}
                 }
             }
         }
