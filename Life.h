@@ -58,6 +58,15 @@ class Life {
             }
             assert((int) l._grid.size() == l.rows && (int) l._grid[0].size() == l.cols);
 
+			assert(l.population == 0);
+            for (int i = 0; i < l.rows; ++i){
+                for (int j = 0; j < l.cols; ++j){
+					if (l._grid[i][j].isAlive()){
+						++l.population;
+					}
+                }
+            }
+
             return in;
         }
 
