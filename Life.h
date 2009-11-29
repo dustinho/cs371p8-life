@@ -189,6 +189,7 @@ class Life {
 					}
                 }
             }
+			++generation;
         }
 
 
