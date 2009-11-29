@@ -74,108 +74,145 @@ class Life {
         }
 
         void move() {
-            // Increment neighbor count of center cells
-            for (int r = 1; r < rows-1; ++r) {
-                for (int c = 1; c < cols-1; ++c) {
-                    if (_grid[r][c].isAlive()) {
-                        _grid[r-1][c].incNeighbors();
-                        _grid[r][c-1].incNeighbors();
-                        _grid[r][c+1].incNeighbors();
-                        _grid[r+1][c].incNeighbors();
+			// if there is only one row or only one col, we have to do special logic
+			if (rows > 1 && cols > 1) {
+				// Increment neighbor count of center cells
+				for (int r = 1; r < rows-1; ++r) {
+					for (int c = 1; c < cols-1; ++c) {
+						if (_grid[r][c].isAlive()) {
+							_grid[r-1][c].incNeighbors();
+							_grid[r][c-1].incNeighbors();
+							_grid[r][c+1].incNeighbors();
+							_grid[r+1][c].incNeighbors();
 
-                        _grid[r-1][c-1].conwayInc();
-                        _grid[r-1][c+1].conwayInc();
-                        _grid[r+1][c-1].conwayInc();
-                        _grid[r+1][c+1].conwayInc();
-                    }
-                }
-            }
+							_grid[r-1][c-1].conwayInc();
+							_grid[r-1][c+1].conwayInc();
+							_grid[r+1][c-1].conwayInc();
+							_grid[r+1][c+1].conwayInc();
+						}
+					}
+				}
 
-            // Increment neighbor count of sides
-            for (int r = 1; r < rows-1; ++r) {
-                int c = 0;
-                if (_grid[r][c].isAlive()) {
-                    _grid[r-1][c].incNeighbors();
-                    _grid[r][c+1].incNeighbors();
-                    _grid[r+1][c].incNeighbors();
+				// Increment neighbor count of sides
+				for (int r = 1; r < rows-1; ++r) {
+					int c = 0;
+					if (_grid[r][c].isAlive()) {
+						_grid[r-1][c].incNeighbors();
+						_grid[r][c+1].incNeighbors();
+						_grid[r+1][c].incNeighbors();
 
-                    _grid[r-1][c+1].conwayInc();
-                    _grid[r+1][c+1].conwayInc();
-                }
+						_grid[r-1][c+1].conwayInc();
+						_grid[r+1][c+1].conwayInc();
+					}
 
-                c = cols - 1;
-                if (_grid[r][c].isAlive()) {
-                    _grid[r-1][c].incNeighbors();
-                    _grid[r][c-1].incNeighbors();
-                    _grid[r+1][c].incNeighbors();
+					c = cols - 1;
+					if (_grid[r][c].isAlive()) {
+						_grid[r-1][c].incNeighbors();
+						_grid[r][c-1].incNeighbors();
+						_grid[r+1][c].incNeighbors();
 
-                    _grid[r-1][c-1].conwayInc();
-                    _grid[r+1][c-1].conwayInc();
-                }
-            }
+						_grid[r-1][c-1].conwayInc();
+						_grid[r+1][c-1].conwayInc();
+					}
+				}
 
-            // Increment neighbor count of top sides
-            for (int c = 1; c < cols-1; ++c) {
-                int r = 0;
-                if (_grid[r][c].isAlive()) {
-                    _grid[r][c-1].incNeighbors();
-                    _grid[r][c+1].incNeighbors();
-                    _grid[r+1][c].incNeighbors();
+				// Increment neighbor count of top sides
+				for (int c = 1; c < cols-1; ++c) {
+					int r = 0;
+					if (_grid[r][c].isAlive()) {
+						_grid[r][c-1].incNeighbors();
+						_grid[r][c+1].incNeighbors();
+						_grid[r+1][c].incNeighbors();
 
-                    _grid[r+1][c-1].conwayInc();
-                    _grid[r+1][c+1].conwayInc();
-                }
+						_grid[r+1][c-1].conwayInc();
+						_grid[r+1][c+1].conwayInc();
+					}
 
-                r = rows - 1;
-                if (_grid[r][c].isAlive()) {
-                    _grid[r-1][c].incNeighbors();
-                    _grid[r][c-1].incNeighbors();
-                    _grid[r][c+1].incNeighbors();
+					r = rows - 1;
+					if (_grid[r][c].isAlive()) {
+						_grid[r-1][c].incNeighbors();
+						_grid[r][c-1].incNeighbors();
+						_grid[r][c+1].incNeighbors();
 
-                    _grid[r-1][c-1].conwayInc();
-                    _grid[r-1][c+1].conwayInc();
-                }
-            }
+						_grid[r-1][c-1].conwayInc();
+						_grid[r-1][c+1].conwayInc();
+					}
+				}
 
-            // Increment neighbor count of corners
-            int r;
-            int c;
+				// Increment neighbor count of corners
+				int r;
+				int c;
 
-            r = 0;
-            c = 0;
-            if (_grid[r][c].isAlive()) {
-                _grid[r][c+1].incNeighbors();
-                _grid[r+1][c].incNeighbors();
+				r = 0;
+				c = 0;
+				if (_grid[r][c].isAlive()) {
+					_grid[r][c+1].incNeighbors();
+					_grid[r+1][c].incNeighbors();
 
-                _grid[r+1][c+1].conwayInc();
-            }
+					_grid[r+1][c+1].conwayInc();
+				}
 
-            r = 0;
-            c = cols-1;
-            if (_grid[r][c].isAlive()) {
-                _grid[r][c-1].incNeighbors();
-                _grid[r+1][c].incNeighbors();
+				r = 0;
+				c = cols-1;
+				if (_grid[r][c].isAlive()) {
+					_grid[r][c-1].incNeighbors();
+					_grid[r+1][c].incNeighbors();
 
-                _grid[r+1][c-1].conwayInc();
-            }
+					_grid[r+1][c-1].conwayInc();
+				}
 
-            r = rows-1;
-            c = 0;
-            if (_grid[r][c].isAlive()) {
-                _grid[r-1][c].incNeighbors();
-                _grid[r][c+1].incNeighbors();
+				r = rows-1;
+				c = 0;
+				if (_grid[r][c].isAlive()) {
+					_grid[r-1][c].incNeighbors();
+					_grid[r][c+1].incNeighbors();
 
-                _grid[r-1][c+1].conwayInc();
-            }
+					_grid[r-1][c+1].conwayInc();
+				}
 
-            r = rows-1;
-            c = cols-1;
-            if (_grid[r][c].isAlive()) {
-                _grid[r-1][c].incNeighbors();
-                _grid[r][c-1].incNeighbors();
+				r = rows-1;
+				c = cols-1;
+				if (_grid[r][c].isAlive()) {
+					_grid[r-1][c].incNeighbors();
+					_grid[r][c-1].incNeighbors();
 
-                _grid[r-1][c-1].conwayInc();
-            }
+					_grid[r-1][c-1].conwayInc();
+				}
+			} else {
+				// we have a grid with only one col or one row
+				assert ( rows == 1 || cols == 1);
+
+				int r;
+				int c;
+				if (rows == 1 && cols == 1) {
+					// no neighbors
+				} else if (rows == 1) {
+					r = 0;
+					c = 0;
+					if (_grid[r][c].isAlive()) {
+						_grid[r][c+1].incNeighbors();
+					}
+
+					r = 0;
+					c = cols-1;
+					if (_grid[r][c].isAlive()) {
+						_grid[r][c-1].incNeighbors();
+					}
+
+				} else { // cols == 1
+					r = 0;
+					c = 0;
+					if (_grid[r][c].isAlive()) {
+						_grid[r+1][c].incNeighbors();
+					}
+
+					r = rows-1;
+					c = 0;
+					if (_grid[r][c].isAlive()) {
+						_grid[r-1][c].incNeighbors();
+					}
+				}
+			}
 
             // Eval each cell
 			population = 0;
