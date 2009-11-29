@@ -1,0 +1,29 @@
+==26599== Memcheck, a memory error detector.
+==26599== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==26599== Using LibVEX rev 1878, a library for dynamic binary translation.
+==26599== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==26599== Using valgrind-3.4.0, a dynamic binary instrumentation framework.
+==26599== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==26599== For more details, rerun with: -v
+==26599==
+.........
+
+
+OK (9 tests)
+
+
+==26599==
+==26599== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 21 from 1)
+==26599== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
+==26599== malloc/free: 466 allocs, 460 frees, 162,804 bytes allocated.
+==26599== For counts of detected errors, rerun with: -v
+==26599== searching for pointers to 6 not-freed blocks.
+==26599== checked 125,628 bytes.
+==26599==
+==26599== LEAK SUMMARY:
+==26599==    definitely lost: 0 bytes in 0 blocks.
+==26599==      possibly lost: 0 bytes in 0 blocks.
+==26599==    still reachable: 122,880 bytes in 6 blocks.
+==26599==         suppressed: 0 bytes in 0 blocks.
+==26599== Rerun with --leak-check=full to see details of leaked memory.
+

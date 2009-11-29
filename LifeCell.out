@@ -1,3 +1,11 @@
+==27666== Memcheck, a memory error detector.
+==27666== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==27666== Using LibVEX rev 1878, a library for dynamic binary translation.
+==27666== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==27666== Using valgrind-3.4.0, a dynamic binary instrumentation framework.
+==27666== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==27666== For more details, rerun with: -v
+==27666==
 *** Life<Cell> 20x20 ***
 
 Generation = 0, Population = 6.
@@ -123,7 +131,7 @@ Generation = 5, Population = 52.
 --------.--.--------
 ---01**.*..*.**10---
 ----0000-..-0000----
---------1111--------
+--------0000--------
 --------------------
 -------011110-------
 --------0000--------
@@ -131,3 +139,18 @@ Generation = 5, Population = 52.
 --------------------
 --------------------
 --------------------
+
+==27666==
+==27666== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 17 from 1)
+==27666== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
+==27666== malloc/free: 2,646 allocs, 2,640 frees, 180,606 bytes allocated.
+==27666== For counts of detected errors, rerun with: -v
+==27666== searching for pointers to 6 not-freed blocks.
+==27666== checked 105,164 bytes.
+==27666==
+==27666== LEAK SUMMARY:
+==27666==    definitely lost: 0 bytes in 0 blocks.
+==27666==      possibly lost: 0 bytes in 0 blocks.
+==27666==    still reachable: 122,880 bytes in 6 blocks.
+==27666==         suppressed: 0 bytes in 0 blocks.
+==27666== Rerun with --leak-check=full to see details of leaked memory.

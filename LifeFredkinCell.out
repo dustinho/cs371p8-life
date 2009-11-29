@@ -1,3 +1,11 @@
+==27612== Memcheck, a memory error detector.
+==27612== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==27612== Using LibVEX rev 1878, a library for dynamic binary translation.
+==27612== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==27612== Using valgrind-3.4.0, a dynamic binary instrumentation framework.
+==27612== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==27612== For more details, rerun with: -v
+==27612==
 *** Life<FredkinCell> 20x20 ***
 
 Generation = 0, Population = 4.
@@ -22,8 +30,7 @@ Generation = 0, Population = 4.
 --------------------
 --------------------
 
-Generation = 1, Population = 3.
---------------------
+Generation = 1, Population = 8.
 --------------------
 --------------------
 --------------------
@@ -33,8 +40,9 @@ Generation = 1, Population = 3.
 --------------------
 --------------------
 ---------00---------
----------0----------
---------------------
+--------0--0--------
+--------0--0--------
+---------00---------
 --------------------
 --------------------
 --------------------
@@ -44,9 +52,7 @@ Generation = 1, Population = 3.
 --------------------
 --------------------
 
-Generation = 2, Population = 4.
---------------------
---------------------
+Generation = 2, Population = 16.
 --------------------
 --------------------
 --------------------
@@ -55,7 +61,11 @@ Generation = 2, Population = 4.
 --------------------
 --------------------
 ---------00---------
----------0----------
+---------11---------
+-------01--10-------
+-------01--10-------
+---------11---------
+---------00---------
 --------------------
 --------------------
 --------------------
@@ -63,5 +73,19 @@ Generation = 2, Population = 4.
 --------------------
 --------------------
 --------------------
---------------------
---------------------
+
+==27612==
+==27612== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 17 from 1)
+==27612== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
+==27612== malloc/free: 188 allocs, 182 frees, 168,710 bytes allocated.
+==27612== For counts of detected errors, rerun with: -v
+==27612== searching for pointers to 6 not-freed blocks.
+==27612== checked 105,164 bytes.
+==27612==
+==27612== LEAK SUMMARY:
+==27612==    definitely lost: 0 bytes in 0 blocks.
+==27612==      possibly lost: 0 bytes in 0 blocks.
+==27612==    still reachable: 122,880 bytes in 6 blocks.
+==27612==         suppressed: 0 bytes in 0 blocks.
+==27612== Rerun with --leak-check=full to see details of leaked memory.
+

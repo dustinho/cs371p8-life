@@ -1,6 +1,14 @@
+==26849== Memcheck, a memory error detector.
+==26849== Copyright (C) 2002-2008, and GNU GPL'd, by Julian Seward et al.
+==26849== Using LibVEX rev 1878, a library for dynamic binary translation.
+==26849== Copyright (C) 2004-2008, and GNU GPL'd, by OpenWorks LLP.
+==26849== Using valgrind-3.4.0, a dynamic binary instrumentation framework.
+==26849== Copyright (C) 2000-2008, and GNU GPL'd, by Julian Seward et al.
+==26849== For more details, rerun with: -v
+==26849==
 *** Life<ConwayCell> 109x69 ***
 
-Generation = 0, Population = 35.
+Generation = 0, Population = 0.
 .....................................................................
 .....................................................................
 .....................................................................
@@ -333,7 +341,7 @@ Generation = 323, Population = 192.
 .....................................................................
 .....................................................................
 
-Generation = 2500, Population = 192.
+Generation = 2823, Population = 192.
 .....................................................................
 .....................................................................
 .....................................................................
@@ -443,3 +451,18 @@ Generation = 2500, Population = 192.
 .....................................................................
 .....................................................................
 .....................................................................
+
+==26849==
+==26849== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 17 from 1)
+==26849== malloc/free: in use at exit: 122,880 bytes in 6 blocks.
+==26849== malloc/free: 1,127 allocs, 1,121 frees, 663,532 bytes allocated.
+==26849== For counts of detected errors, rerun with: -v
+==26849== searching for pointers to 6 not-freed blocks.
+==26849== checked 105,200 bytes.
+==26849==
+==26849== LEAK SUMMARY:
+==26849==    definitely lost: 0 bytes in 0 blocks.
+==26849==      possibly lost: 0 bytes in 0 blocks.
+==26849==    still reachable: 122,880 bytes in 6 blocks.
+==26849==         suppressed: 0 bytes in 0 blocks.
+==26849== Rerun with --leak-check=full to see details of leaked memory.
