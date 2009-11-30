@@ -1,0 +1,103 @@
+commit 4741a4649ef5ef03fd4b059d4cf17ae9003e3125
+Merge: 9fb69f0 7813f92
+Author: dustin <dustin@hinagiku.(none)>
+Date:   Sun Nov 29 02:53:30 2009 -0600
+
+    Merge branch 'master' of git@github.com:dustice/cs371p8-life
+
+commit 7813f922da08d7f8ebf165e944a5da4b7335c782
+Author: Jacqueline Tsay <jtsay@obaba.cs.utexas.edu>
+Date:   Sun Nov 29 02:36:53 2009 -0600
+
+    output files, checked for correctness against Yuanle Song's stuff
+
+commit 53675ec8372328c0d8a69a46323fc5143fe8371b
+Author: Jacqueline Tsay <jtsay@obaba.cs.utexas.edu>
+Date:   Sun Nov 29 02:36:16 2009 -0600
+
+    added population count in operator>> to initialize population
+
+commit 8f4905c395d326f509ed90aff902710e9d021212
+Author: Jacqueline Tsay <jtsay@obaba.cs.utexas.edu>
+Date:   Sun Nov 29 01:56:29 2009 -0600
+
+    TestLife.out
+
+commit ac447a5c5f2c3e479bda5e2d3f7fe3f20436cc9c
+Author: Jacqueline Tsay <jtsay@obaba.cs.utexas.edu>
+Date:   Sun Nov 29 01:52:19 2009 -0600
+
+    added tests
+
+commit c129c65837792827ab5d38f46dd4a633033daa6c
+Author: Jacqueline Tsay <jtsay@obaba.cs.utexas.edu>
+Date:   Sun Nov 29 01:22:30 2009 -0600
+
+    added logic to checking neighbors that worries about not having 4 corners ...like a grid with only one cell D:
+
+commit 413a8d11d297e5b77dc52ca99a48a8203cc67e35
+Author: Jacqueline Tsay <jtsay@obaba.cs.utexas.edu>
+Date:   Sun Nov 29 00:36:28 2009 -0600
+
+    add generation inc...lol
+
+commit ac496f502363a6d2047d0a4bb5cebdd071297037
+Author: Jacqueline Tsay <jtsay@obaba.cs.utexas.edu>
+Date:   Sun Nov 29 00:31:28 2009 -0600
+
+    make TestLife a friend, and add population count logic
+
+commit 9fb69f0cee28ae2a519cd3b57b7743ca7cce7b8b
+Merge: c25ce82 ac0de74
+Author: dustin <dustin@hinagiku.(none)>
+Date:   Fri Nov 27 23:31:22 2009 -0600
+
+    Merge branch 'master' of git@github.com:dustice/cs371p8-life
+
+commit ac0de7442345e85dc157fb84d3545911bf7d25cc
+Author: Jacqueline Tsay <jtsay@obaba.cs.utexas.edu>
+Date:   Fri Nov 27 23:31:04 2009 -0600
+
+    get tests working
+
+commit c25ce82c312b0b4c3dfc4904e60d7c58bddd8df9
+Author: dustin <dustin@hinagiku.(none)>
+Date:   Fri Nov 27 23:26:39 2009 -0600
+
+    Doxygen and rm app
+
+commit 72e880fb955953b15bb94ebf11695e5d145f96ef
+Author: dustin <dustin@hinagiku.(none)>
+Date:   Fri Nov 27 22:51:16 2009 -0600
+
+    fixed memory leak
+
+commit 7456ca9a1b0d803120e4f6d2ead2400ba9dd280e
+Author: dustin <dustin@hinagiku.(none)>
+Date:   Fri Nov 27 22:45:17 2009 -0600
+
+    Whoops, finished with Life too.
+
+commit ecedb04d32de60657f51df55ac5415a275b8f13e
+Author: dustin <dustin@hinagiku.(none)>
+Date:   Fri Nov 27 22:41:02 2009 -0600
+
+    DONE!
+
+commit b917c54cca502c8cecc5adf39a3980721b020698
+Author: dustin <dustin@hinagiku.(none)>
+Date:   Fri Nov 27 17:36:56 2009 -0600
+
+    New Cells
+
+commit 2d3851827f732d545d20c5248254bb21ee1947e4
+Author: dustin <dustin@hinagiku.(none)>
+Date:   Fri Nov 27 17:34:29 2009 -0600
+
+    All cells done!
+
+commit c4d716fe4cac63c9e601ba1d4ca02e8325d0b343
+Author: dustin <dustin@hinagiku.(none)>
+Date:   Fri Nov 27 16:08:17 2009 -0600
+
+    Initial files
